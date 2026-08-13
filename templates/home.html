@@ -1,0 +1,7 @@
+{%extends 'base.html'%}
+{%block content%}
+
+{%for i in cat%}
+    <a href="{% url 'fields' i.id %}">{{i.name}}|</a>
+{%endfor%}
+{%endblock%}

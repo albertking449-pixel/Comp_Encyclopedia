@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'home' %}">Back to all fields</a>
+
+<h1>{{ topic.topic }}</h1>
+
+<div>{{ topic.dp }}</div>
+
+{% for r in topic.resources.all %}
+<div>
+    {% if r.title %}<h3>{{ r.title }}</h3>{% endif %}
+    {% if r.description %}<p>{{ r.description }}</p>{% endif %}
+
+    {% if r.file %}
+        {% if r.resource_type == 'video' %}
+        <video controls width="240" src="{{ r.file.url }}"></video>
+        {% elif r.resource_type == 'pdf' %}
+        <a href="{{ r.file.url }}" target="_blank" rel="noopener">{{ r.file.name }}</a>
+        &nbsp;|&nbsp;
+        <a href="{{ r.file.url }}" download>Download</a>
+        {% endif %}
+    {% endif %}
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block content%}
+<a href="{% url 'home' %}">Back to all fields</a>
+<h1>{{fields.field}}</h1>
+{% for i in topics %}
+<div><a href="{% url 'topics' i.id %}"> {{ i.topic }}</a></div>
+
+{% endfor %}
+{%endblock%}

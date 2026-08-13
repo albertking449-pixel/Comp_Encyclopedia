@@ -1,0 +1,19 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>myweb</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+      <div class="nv">
+        <nav>
+        <a href="{% url 'home' %}">Fields</a>
+        </nav>
+        <h1>Welcome to the the Programming Encyclopedia </h1>
+    </div>
+    </head>
+<body>
+  {%block content%}
+    {%endblock%}
+</body>
+</html>

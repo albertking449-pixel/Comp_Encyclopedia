@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{%url 'home' %}">All fields</a>
+<div><h1>{{ fields.name }}</h1></div>
+
+{% for i in branch  %}
+    <a href="{% url 'branches' i.id %}">{{ i.branch }}|</a>
+{% endfor %}
+
+{% endblock %}
